@@ -9,8 +9,7 @@ File Description
 	2. consistentHashing ------------------------->	Consistent Hashing implementation source code
 	3. hintedHandOff.py -------------------------->	Sloppy Quorum ,Hinted Hand Off and Gossip protocol Implementation
 	4. message_struct ----------------------------> Object Message Structure passed over socket
-	5. server_socket.py and client_socket.py------>	Vector Clock Handling,Bucket creation/Deletion,File creation/deletion implementation
-							Sloppy Quorum ,Hinted Hand Off and Gossip protocol communication implementation
+	5. server_socket.py and client_socket.py------>	Vector Clock Handling,Bucket creation/Deletion,File creation/deletion 							      implementation, Sloppy Quorum ,Hinted Hand Off and Gossip protocol 							  communication implementation
  
 1. Run the REST server through running run.py file. (python run.py)
 2. Run all the socket servers on every node by running server_socket.py (python server_socket.py)
@@ -44,7 +43,7 @@ File Description
 				    "172.18.16.86 : 14 , 172.18.16.123 : 14 , 172.18.16.47 : 14 "
 				  ]
 				}
-		Output 2: If two nodes are up, wrtie the files in respective two nodes. Place the down node into down_system.json file by calling operation number 8. HintedHandoff will take care of 				  whenever the node will be up, it will run retry_down_system and place the content into the node whenever it will give true response. Please Check HintedHandOff Terminal for 				  Output.
+		Output 2: If two nodes are up, wrtie the files in respective two nodes. Place the down node into down_system.json file by calling operation number 8. HintedHandoff will take care of whenever the node will be up, it will run retry_down_system and place the content into the node whenever it will give true response. Please Check HintedHandOff Terminal for Output.
 		Sample Output:
 				{
 				  "down_system_data": [
@@ -64,7 +63,7 @@ File Description
 				  ]
 				}
 
-		Output 3: If Only one node is up, write the files in respective node. Find the hintedNode. Place the file on hintedNode so that quorum can be reached. A file will be created on 	     			          hinted system named hinted.json which will contain the hints of the down nodes. Whenever any of the down node is up, its entry is removed from hinted.json and another hint is     				  sent to any of the up node from the preference list and down_system.json is updated there. Whenever the node will be up, files will be sent through node which have hint about the 				  down system. Please Check HintedHandOff Terminal for Output.
+		Output 3: If Only one node is up, write the files in respective node. Find the hintedNode. Place the file on hintedNode so that quorum can be reached. A file will be created on hinted system named hinted.json which will contain the hints of the down nodes. Whenever any of the down node is up, its entry is removed from hinted.json and another hint is     sent to any of the up node from the preference list and down_system.json is updated there. Whenever the node will be up, files will be sent through node which have hint about the 	down system. Please Check HintedHandOff Terminal for Output.
 		Sample Output:
 				{
 				  "hinted_system_data": "172.18.16.38",
